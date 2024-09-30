@@ -1,5 +1,5 @@
 package co.edu.uceva.facultadservice;
-
+/*PRUEBA PUSH EN DEVELOPS*/
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
