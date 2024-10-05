@@ -6,19 +6,21 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 
+import java.util.Date;
+
 @Data
 @Entity
 public class Facultad {
     @Id
+    private Long codigoFacu;
     private String nombreFacu;
-    private String codigoFacu;
     private String decano;
     private String modalidad;
     private String proyecInvestFacu;
     private String descripcion;
-    private String fechaCrea;
-    private String telefono;
+    private Date fechaCrea;
+    private int telefono;
     private String correo;
     private String programasAcademicos;
-    private String calendarioAcademico;
+    private String calendarioAcademico; // Que tipo de dato es este?
 }
