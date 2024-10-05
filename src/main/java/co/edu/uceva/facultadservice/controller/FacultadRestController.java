@@ -13,8 +13,21 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/facultad-service")
 public class FacultadRestController {
+
     @Autowired
-    private FacultadServiceImpl facultadService; // Inyecto el servicio de la entidad Pais para realizar las operaciones CRUD
+    private FacultadServiceImpl facultadService;
+
+
+    /**
+     * Este metodo se encarga de retornar una lista de todas las facultades
+     * @return
+     */
+
+
+    @GetMapping("/facultades")
+    public List<Facultad> listar(){
+        return this.facultadService.listar();
+    }
 
 
 }
