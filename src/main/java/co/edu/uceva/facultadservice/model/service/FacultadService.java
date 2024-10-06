@@ -7,7 +7,7 @@ import java.util.List;
 public interface FacultadService {
     
     public List<Facultad> listar();
-
+    Facultad findById(Long id);
 }
 
 
