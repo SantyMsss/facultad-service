@@ -22,4 +22,8 @@ public class FacultadServiceImpl implements FacultadService {
     }
 
 
+
+    @Override
+    public Facultad findById(Long id) {return facultadDao.findById(id).orElse(null);
 }
+
