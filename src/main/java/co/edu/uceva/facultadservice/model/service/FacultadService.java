@@ -8,5 +8,6 @@ public interface FacultadService {
     
     public List<Facultad> listar();
 
-
 }
+
+
