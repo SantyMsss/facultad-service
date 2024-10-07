@@ -53,5 +53,5 @@ public class FacultadRestController {
             return ResponseEntity.status(500).body(response);
         }
     }
-    
+
 }
