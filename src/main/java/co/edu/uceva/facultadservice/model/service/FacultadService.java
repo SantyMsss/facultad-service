@@ -8,6 +8,7 @@ public interface FacultadService {
     
     public List<Facultad> listar();
     Facultad findById(Long id);
+    void delete(Facultad facultad);
 }
 
 
