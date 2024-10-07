@@ -13,6 +13,7 @@ public class FacultadServiceImpl implements FacultadService {
 
     /**
      * Este metodo se encarga de listar las facultades
+     *
      * @return retorna una lista de facultades
      */
 
@@ -22,10 +23,14 @@ public class FacultadServiceImpl implements FacultadService {
     }
 
 
+    @Override
+    public Facultad findById(Long id) {
+        return facultadDao.findById(id).orElse(null);
+    }
 
     @Override
-    public Facultad findById(Long id) {return facultadDao.findById(id).orElse(null); }
-
+    public void delete(Facultad facultad) { facultadDao.delete(facultad);
+    }
 }
 
 
