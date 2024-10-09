@@ -31,6 +31,11 @@ public class FacultadServiceImpl implements FacultadService {
     @Override
     public void delete(Facultad facultad) { facultadDao.delete(facultad);
     }
+
+    @Override
+    public Facultad save(Facultad facultad) {
+        return facultadDao.save(facultad);
+    }
 }
 
 

@@ -54,4 +54,37 @@ public class FacultadRestController {
         }
     }
 
+    @PutMapping("/facultades/{id}")
+    public ResponseEntity<?> actualizarFacultad(@RequestBody Facultad facultad, @PathVariable Long id) {
+        Map<String, Object> response = new HashMap<>();
+        Facultad facultadActual = null;
+        try {
+            facultadActual = this.facultadService.findById(id);
+            if (facultadActual == null) {
+                response.put("mensaje", "La facultad con ID " + id + " no existe.");
+                return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+            }
+
+            facultadActual.setCodigoFacu(facultad.getCodigoFacu());
+            facultadActual.setNombreFacu(facultad.getNombreFacu());
+            facultadActual.setDecano(facultad.getDecano());
+            facultadActual.setModalidad(facultad.getModalidad());
+            facultadActual.setProyecInvestFacu(facultad.getProyecInvestFacu());
+            facultadActual.setDescripcion(facultad.getDescripcion());
+            facultadActual.setFechaCrea(facultad.getFechaCrea());
+            facultadActual.setTelefono(facultad.getTelefono());
+            facultadActual.setCorreo(facultad.getCorreo());
+            facultadActual.setProgramasAcademicos(facultad.getProgramasAcademicos());
+            facultadActual.setCalendarioAcademico(facultad.getCalendarioAcademico());
+
+            Facultad facultadActualizada = this.facultadService.save(facultadActual);
+            response.put("mensaje", "La facultad ha sido actualizada con éxito.");
+            response.put("facultad", facultadActualizada);
+            return new ResponseEntity<>(response, HttpStatus.OK);
+        } catch (Exception e) {
+            response.put("mensaje", "Error al actualizar la facultad.");
+            response.put("error", e.getMessage());
+            return ResponseEntity.status(500).body(response);
+        }
+    }
 }
