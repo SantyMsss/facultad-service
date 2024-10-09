@@ -64,10 +64,18 @@ public class FacultadRestController {
                 response.put("mensaje", "La facultad con ID " + id + " no existe.");
                 return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
             }
-            // Actualizar los datos de la facultad
-            facultadActual.setnombreFacu(facultad.getnombreFacu());
+
+            facultadActual.setCodigoFacu(facultad.getCodigoFacu());
+            facultadActual.setNombreFacu(facultad.getNombreFacu());
+            facultadActual.setDecano(facultad.getDecano());
+            facultadActual.setModalidad(facultad.getModalidad());
+            facultadActual.setProyecInvestFacu(facultad.getProyecInvestFacu());
             facultadActual.setDescripcion(facultad.getDescripcion());
-            // Agrega más campos según sea necesario
+            facultadActual.setFechaCrea(facultad.getFechaCrea());
+            facultadActual.setTelefono(facultad.getTelefono());
+            facultadActual.setCorreo(facultad.getCorreo());
+            facultadActual.setProgramasAcademicos(facultad.getProgramasAcademicos());
+            facultadActual.setCalendarioAcademico(facultad.getCalendarioAcademico());
 
             Facultad facultadActualizada = this.facultadService.save(facultadActual);
             response.put("mensaje", "La facultad ha sido actualizada con éxito.");
@@ -78,5 +86,5 @@ public class FacultadRestController {
             response.put("error", e.getMessage());
             return ResponseEntity.status(500).body(response);
         }
-
+    }
 }
