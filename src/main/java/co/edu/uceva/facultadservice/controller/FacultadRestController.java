@@ -31,6 +31,16 @@ public class FacultadRestController {
         return this.facultadService.listar();
     }
 
+    @PostMapping("/facultades")
+    public ResponseEntity<?> guardarFacultad(@RequestBody Facultad facultad) {
+        try {
+            Facultad facultades = this.facultadService.save(facultad);
+            return ResponseEntity.ok(facultades);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al guardar la facultad: " + e.getMessage());
+        }
+    }
+
 
     @GetMapping("/facultades/{id}")
     public ResponseEntity<Facultad> buscarFacultad(@PathVariable Long id) {
@@ -45,7 +55,7 @@ public class FacultadRestController {
 
 
     @DeleteMapping("/facultades/{id}")
-    public ResponseEntity<?> eliminarPais(@PathVariable Long id) {
+    public ResponseEntity<?> eliminarFacultad(@PathVariable Long id) {
         Map<String, Object> response = new HashMap<>();
         Facultad facultades = null;
         try {
