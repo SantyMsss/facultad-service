@@ -24,6 +24,12 @@ public class FacultadServiceImpl implements FacultadService {
 
 
     @Override
+    public  Facultad update(Facultad facultad) {
+        return facultadDao.save(facultad);
+    }
+
+
+    @Override
     public Facultad findById(Long id) {
         return facultadDao.findById(id).orElse(null);
     }
