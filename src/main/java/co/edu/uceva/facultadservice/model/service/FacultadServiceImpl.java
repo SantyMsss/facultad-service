@@ -36,6 +36,7 @@ public class FacultadServiceImpl implements FacultadService {
     public Facultad save(Facultad facultad) {
         return facultadDao.save(facultad);
     }
+
 }
 
 
