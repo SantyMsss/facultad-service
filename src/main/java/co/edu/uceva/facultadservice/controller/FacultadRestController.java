@@ -32,6 +32,18 @@ public class FacultadRestController {
     }
 
 
+    @GetMapping("/facultades/{id}")
+    public ResponseEntity<Facultad> buscarFacultad(@PathVariable Long id) {
+        try {
+            Facultad facultad = facultadService.findById(id);
+            return ResponseEntity.ok(facultad);
+        } catch (Exception e) {
+            // error o devolver un mensaje de error
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
+
     @DeleteMapping("/facultades/{id}")
     public ResponseEntity<?> eliminarPais(@PathVariable Long id) {
         Map<String, Object> response = new HashMap<>();
