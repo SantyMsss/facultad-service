@@ -80,7 +80,7 @@ public class FacultadRestController {
     @PutMapping("/facultades/{id}")
     public ResponseEntity<?> actualizarFacultad(@RequestBody Facultad facultad) {
             try {
-                Facultad facultades = this.facultadService.save(facultad);
+                Facultad facultades = this.facultadService.update(facultad);
                 return ResponseEntity.ok(facultades);
             } catch (Exception e) {
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al guardar la facultad: " + e.getMessage());
@@ -88,4 +88,4 @@ public class FacultadRestController {
         }
     }
 
-}
+

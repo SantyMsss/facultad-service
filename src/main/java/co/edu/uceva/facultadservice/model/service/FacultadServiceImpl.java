@@ -3,9 +3,11 @@ package co.edu.uceva.facultadservice.model.service;
 import co.edu.uceva.facultadservice.model.dao.FacultadDao;
 import co.edu.uceva.facultadservice.model.entities.Facultad;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class FacultadServiceImpl implements FacultadService {
     @Autowired
     FacultadDao facultadDao;

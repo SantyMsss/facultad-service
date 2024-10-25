@@ -12,6 +12,7 @@ import java.util.Date;
 @Entity
 public class Facultad {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long codigoFacu;
     private String nombreFacu;
     private String decano;
