@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface FacultadService {
 
-    public List<Facultad> listar();
+    List<Facultad> listar();
     Facultad findById(Long id);
     void delete(Facultad facultad);
     Facultad update(Facultad facultad);

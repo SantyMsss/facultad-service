@@ -28,8 +28,13 @@ public class FacultadRestController {
 
 
     @GetMapping("/facultades")
-    public List<Facultad> listar() {
-        return this.facultadService.listar();
+    public ResponseEntity<?> listar() {
+        try {
+            List<Facultad> facultades = this.facultadService.listar();
+            return ResponseEntity.ok(facultades);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al listar las facultades: " + e.getMessage());
+        }
     }
 
     @PostMapping("/facultades")
@@ -80,7 +85,7 @@ public class FacultadRestController {
     @PutMapping("/facultades/{id}")
     public ResponseEntity<?> actualizarFacultad(@RequestBody Facultad facultad) {
             try {
-                Facultad facultades = this.facultadService.update(facultad);
+                Facultad facultades = this.facultadService.save(facultad);
                 return ResponseEntity.ok(facultades);
             } catch (Exception e) {
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al guardar la facultad: " + e.getMessage());
