@@ -69,7 +69,7 @@ public class FacultadRestControllerTests {
      */
     @Test
     public void testHolaMundo() throws Exception {
-        String nombre = "pedriño dest";
+        String nombre = "pedriño holiii";
         this.mockMvc.perform(get("/api/v1/facultad-service/hola/{nombre}", nombre))
                 .andExpect(status().isOk())
                 .andExpect(content().string("Hola " + nombre));
