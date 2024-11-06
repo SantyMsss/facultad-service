@@ -26,6 +26,11 @@ public class FacultadRestController {
      * @return
      */
 
+    @GetMapping("/hola/{nombre}")
+    public String holaMundo(@PathVariable("nombre") String nombre) {
+        return "Hola " + nombre;
+    }
+
 
     @GetMapping("/facultades")
     public ResponseEntity<?> listar() {

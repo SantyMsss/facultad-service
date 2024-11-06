@@ -1,11 +1,16 @@
 package co.edu.uceva.facultadservice.model.entities;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
+
 import java.util.Date;
 
 @Data
 @Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Facultad {
 
     @Id
