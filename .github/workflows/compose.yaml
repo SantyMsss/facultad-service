@@ -2,7 +2,7 @@ name: Prueba
 # Controles de flujo (on, env, jobs, steps, etc)
 on:       # Eventos que disparan el flujo de trabajo (push, pull_request, etc)
   push:         # Evento push
-    branches: [ feature/KAN-94-Realizar-pruebas ]  # Rama develops
+    branches: [ develops ]  # Rama develops
   pull_request:           # Evento pull_request (PR)
     branches: [ develops ]  # Rama develops
 
