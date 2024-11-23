@@ -14,6 +14,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1/facultad-service")
+@CrossOrigin(origins =  "http://localhost:4200")
 public class FacultadRestController {
 
     @Autowired
